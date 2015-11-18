@@ -1,27 +1,53 @@
-<h1>Listing reminders</h1>
+<h2 class="text-muted">My Reminders</h2>
 
-<table>
+<div class="jumbotron">
+
+
+
+ <a href="/reminders/new" class="new_reminder_link"><span class="glyphicon glyphicon-plus"></span> New Reminder</a>
+
+
+
+
+ <% @reminders.each do |reminder| %>
+ <table class="table table-condensed table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th>
+        <div class="tab">
+          <%= reminder.name %> 
+        </div>
+
+        <div class="float-right">
+          <a href="/reminders/<%= reminder.id %>/edit"><span class="glyphicon glyphicon-edit"></span> Edit </a>  &nbsp; &nbsp; &nbsp;
+          <a data-confirm="Are you sure?" data-method="delete" href="/reminders/<%= reminder.id %>" rel="nofollow"><span class="glyphicon glyphicon-trash"></span> Delete </a>
+        </div>
+
+      </th>
     </tr>
   </thead>
 
+
   <tbody>
-    <% @reminders.each do |reminder| %>
-      <tr>
-        <td><%= reminder.name %></td>
-        <td><%= reminder.content %></td>
-        <td><%= link_to 'Show', reminder %></td>
-        <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
-        <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% reminder.content.each_line do |item|%>
+    <tr><td><%= item %></td></tr>
     <% end %>
   </tbody>
+
 </table>
+<div class="spacer"></div>
 
-<br>
+<% end %>
 
-<%= link_to 'New Reminder', new_reminder_path %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
