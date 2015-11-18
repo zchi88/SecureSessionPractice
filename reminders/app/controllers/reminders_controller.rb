@@ -39,7 +39,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @reminder.user_id = current_user.id
     @reminder.save
-    respond_with(@reminder)
+    redirect_to :action => :index
   end
 
   def update
@@ -50,7 +50,7 @@ class RemindersController < ApplicationController
     end
 
     @reminder.update(reminder_params)
-    respond_with(@reminder)
+    redirect_to :action => :index
   end
 
   def destroy
