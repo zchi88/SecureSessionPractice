@@ -22,7 +22,7 @@ These dependencies can be easily installed using the [Rails Installer](http://ra
 1. Clone or copy this repository to your local machine
 2. Open a command line interface, and change directory so that you are at the reminders directory. Your working directory should now look something like:
 
-	`...\SecureSessionPractice\reminders`
+	`\PATH\TO\reminders`
 
 3. Install gem dependencies for the app by typing:
 
