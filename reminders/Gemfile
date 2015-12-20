@@ -50,3 +50,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Use devise authentication
 gem 'devise'
 
+# Testing using rspec and factory girl
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
