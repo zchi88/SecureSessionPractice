@@ -20,7 +20,7 @@ These dependencies can be easily installed using the [Rails Installer](http://ra
 
 ## Start the App:
 1. Clone or copy this repository to your local machine
-2. Open a command line interface, and change directory so that you are at the reminders directory. Your working directory should now look something like:
+2. Open up a command prompt, and change directory so that you are at the reminders directory. Your working directory should now look something like:
 
 	`\PATH\TO\reminders`
 
@@ -70,3 +70,37 @@ not work because reminder 1 does not belong to that user. The same holds true fo
 3. Confirm that trying to access any resources while not logged in does not work.
 For example, visiting [http://localhost:3000/reminders](http://localhost:3000/reminders) should not work.
 
+
+## Run the test suite:
+This app comes with 3 tests for the Reminders controller. These tests ensure that user authentication is working
+as intended. The tests are created with the Rspec Rails testing framework. Test fixtures are created using the FactoryGirl gem.
+
+The default test suite provided is as follows:
+
+1. The first test checks that users who are not logged in are redirected to the login page when trying to access any resource from this applicaiton. 
+
+2. The second test checks that users who are logged in are able to access their own reminders.
+
+3. The third test checks that users who are logged in are not able to access other users' reminders. 
+
+To run the test suite, open up a command prompt, and change directory so that you are at the reminders directory. Your working directory should now look something like:
+
+	`\PATH\TO\reminders`
+
+Ensure that you have installed all gem dependencies for the app by typing:
+
+	```console
+	bundle install
+	```
+
+Then simply, type the following to run the Rspec tests:
+
+	```console
+	bundle exec rspec
+	```
+The tests should run successfully and produce an output like:
+	
+	```console
+	Finished in 0.12459 seconds (files took 10.93 seconds to load)
+	3 examples, 0 failures
+	```
