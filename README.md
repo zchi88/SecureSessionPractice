@@ -85,22 +85,23 @@ The default test suite provided is as follows:
 
 To run the test suite, open up a command prompt, and change directory so that you are at the reminders directory. Your working directory should now look something like:
 
-	`\PATH\TO\reminders`
+`\PATH\TO\reminders`
 
 Ensure that you have installed all gem dependencies for the app by typing:
 
-	```console
-	bundle install
-	```
+```console
+rails server
+```
 
 Then simply, type the following to run the Rspec tests:
 
-	```console
-	bundle exec rspec
-	```
+```console
+bundle exec rspec
+```
+
 The tests should run successfully and produce an output like:
 	
-	```console
-	Finished in 0.12459 seconds (files took 10.93 seconds to load)
-	3 examples, 0 failures
-	```
+```console
+Finished in 0.12459 seconds (files took 10.93 seconds to load)
+3 examples, 0 failures
+```
