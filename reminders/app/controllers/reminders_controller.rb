@@ -13,7 +13,7 @@ class RemindersController < ApplicationController
   def show
     if !user_authorized?
       flash.now[:alert] = "You are unauthorized to view this reminder."
-      render "error"
+      render "error",  status: 401 
       return
     end
 
@@ -28,7 +28,7 @@ class RemindersController < ApplicationController
   def edit
     if !user_authorized?
       flash.now[:alert] = "You are unauthorized to edit this reminder."
-      render "error"
+      render "error",  status: 401 
       return
     end
 
@@ -45,7 +45,7 @@ class RemindersController < ApplicationController
   def update
     if !user_authorized?
       flash.now[:alert] = "You are unauthorized to update this reminder."
-      render "error"
+      render "error",  status: 401 
       return
     end
 
@@ -56,7 +56,7 @@ class RemindersController < ApplicationController
   def destroy
     if !user_authorized?
       flash.now[:alert] = "You are unauthorized to delete this reminder."
-      render "error"
+      render "error",  status: 401 
       return
     end
 
@@ -84,7 +84,7 @@ class RemindersController < ApplicationController
     def check_reminder_exists
       if @reminder.nil?
       flash.now[:alert] = "Reminder does not exist!"
-      render "error"
+      render "error",  status: 401 
       return
     end
   end
