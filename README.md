@@ -83,17 +83,18 @@ The default test suite provided is as follows:
 
 3. The third test checks that users who are logged in are not able to access other users' reminders. 
 
-To run the test suite, open up a command prompt, and change directory so that you are at the reminders directory. Your working directory should now look something like:
+To run the test suite, you must first clone or download the source code for this application to your local machine.
+Then, open up a command prompt, and change directory so that you are at the reminders directory. Your working directory should now look something like:
 
 `\PATH\TO\reminders`
 
 Ensure that you have installed all gem dependencies for the app by typing:
 
 ```console
-rails server
+bundle install
 ```
 
-Then simply, type the following to run the Rspec tests:
+Then simply type the following to run the Rspec tests:
 
 ```console
 bundle exec rspec
